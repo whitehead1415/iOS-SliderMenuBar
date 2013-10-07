@@ -9,8 +9,7 @@
 /* Begin PBXBuildFile section */
 		2426E4EE1801E45C00F3724C /* SliderMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2426E4ED1801E45C00F3724C /* SliderMenuController.m */; };
 		2426E4F01801E50E00F3724C /* SliderMenuControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2426E4EF1801E50E00F3724C /* SliderMenuControllerTests.m */; };
-		247FF1451800A79F000C22B1 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 247FF1441800A79F000C22B1 /* libOCMock.a */; };
-		247FF1461800A7C4000C22B1 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 247FF1441800A79F000C22B1 /* libOCMock.a */; };
+		242E66DE18035B7C00B8722F /* UIImage+ColorImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 242E66DD18035B7C00B8722F /* UIImage+ColorImage.m */; };
 		248F6EC717FE642D006B3F3E /* SliderMenuBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 248F6EC617FE642D006B3F3E /* SliderMenuBar.m */; };
 		248F6EC917FE643A006B3F3E /* SliderMenuBarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 248F6EC817FE643A006B3F3E /* SliderMenuBarTests.m */; };
 		248F6ECC17FE711B006B3F3E /* SliderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 248F6ECB17FE711B006B3F3E /* SliderViewController.m */; };
@@ -47,6 +46,8 @@
 		2426E4EC1801E45C00F3724C /* SliderMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SliderMenuController.h; sourceTree = "<group>"; };
 		2426E4ED1801E45C00F3724C /* SliderMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SliderMenuController.m; sourceTree = "<group>"; };
 		2426E4EF1801E50E00F3724C /* SliderMenuControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SliderMenuControllerTests.m; sourceTree = "<group>"; };
+		242E66DC18035B7C00B8722F /* UIImage+ColorImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ColorImage.h"; sourceTree = "<group>"; };
+		242E66DD18035B7C00B8722F /* UIImage+ColorImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ColorImage.m"; sourceTree = "<group>"; };
 		247FF138180094B4000C22B1 /* SliderMenuItemDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SliderMenuItemDelegate.h; sourceTree = "<group>"; };
 		247FF13D1800A79F000C22B1 /* NSNotificationCenter+OCMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+OCMAdditions.h"; sourceTree = "<group>"; };
 		247FF13E1800A79F000C22B1 /* OCMArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMArg.h; sourceTree = "<group>"; };
@@ -90,7 +91,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				24F4798817FE584D0079EFF7 /* CoreGraphics.framework in Frameworks */,
-				247FF1451800A79F000C22B1 /* libOCMock.a in Frameworks */,
 				24F4798A17FE584D0079EFF7 /* UIKit.framework in Frameworks */,
 				24F4798617FE584D0079EFF7 /* Foundation.framework in Frameworks */,
 			);
@@ -100,7 +100,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				247FF1461800A7C4000C22B1 /* libOCMock.a in Frameworks */,
 				24F479A817FE584E0079EFF7 /* XCTest.framework in Frameworks */,
 				24F479AA17FE584E0079EFF7 /* UIKit.framework in Frameworks */,
 				24F479A917FE584E0079EFF7 /* Foundation.framework in Frameworks */,
@@ -206,6 +205,8 @@
 				248F6ECB17FE711B006B3F3E /* SliderViewController.m */,
 				2426E4EC1801E45C00F3724C /* SliderMenuController.h */,
 				2426E4ED1801E45C00F3724C /* SliderMenuController.m */,
+				242E66DC18035B7C00B8722F /* UIImage+ColorImage.h */,
+				242E66DD18035B7C00B8722F /* UIImage+ColorImage.m */,
 			);
 			path = SliderMenu;
 			sourceTree = "<group>";
@@ -350,6 +351,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				242E66DE18035B7C00B8722F /* UIImage+ColorImage.m in Sources */,
 				248F6EC717FE642D006B3F3E /* SliderMenuBar.m in Sources */,
 				248F6ECC17FE711B006B3F3E /* SliderViewController.m in Sources */,
 				24F4799617FE584E0079EFF7 /* AppDelegate.m in Sources */,
@@ -501,10 +503,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
 				INFOPLIST_FILE = "SliderMenu/SliderMenu-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					/Users/whitehead1415/Documents/SliderMenu/Libraries/usr/lib,
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -522,10 +521,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
 				INFOPLIST_FILE = "SliderMenu/SliderMenu-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					/Users/whitehead1415/Documents/SliderMenu/Libraries/usr/lib,
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -553,10 +549,7 @@
 					"$(SRCROOT)/Libraries/usr/include",
 				);
 				INFOPLIST_FILE = "SliderMenuTests/SliderMenuTests-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					/Users/whitehead1415/Documents/SliderMenu/Libraries/usr/lib,
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
@@ -588,10 +581,7 @@
 					"$(SRCROOT)/Libraries/usr/include",
 				);
 				INFOPLIST_FILE = "SliderMenuTests/SliderMenuTests-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					/Users/whitehead1415/Documents/SliderMenu/Libraries/usr/lib,
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",

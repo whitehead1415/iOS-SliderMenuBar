@@ -9,7 +9,8 @@ A completely customizable alternative to the UITabBarController.
 - Animates the selected item in bar
 
 ##Todo
-- Manage images with text in SliderMenuItem
+- Make Images fit with text if item is large enough to hold both
+- Smooth animations for showing text or image
 - Allow to instantiate with option of vertical or horizontal bar
 - Add UIScrollView to the bar (So that you can put more than 5 items on the bar)
 

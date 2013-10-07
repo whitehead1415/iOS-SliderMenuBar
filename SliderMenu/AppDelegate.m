@@ -15,8 +15,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-//    UIImage *image1 = [UIImage imageNamed:@"arrow_right_1.png"];
-//    UIImage *image2 = [UIImage imageNamed:@"arrow_right.png"];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
     UIColor *darkBlue = [UIColor colorWithRed:44.0/255.0 green:62.0/255.0 blue:80.0/255.0 alpha:1.0];
     UIColor *lightBlue = [UIColor colorWithRed:109.0/255.0 green:188.0/255.0 blue:219.0/255.0 alpha:1.0];

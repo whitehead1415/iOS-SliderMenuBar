@@ -21,6 +21,7 @@
         NSMutableArray *items = [[NSMutableArray alloc] initWithCapacity:viewControllers.count];
         int count = viewControllers.count;
         active = 0;
+        [[[viewControllers objectAtIndex:0] sliderMenuItem] setSelected:YES];
         for (int i = 0; i < count; i++) {
             SliderViewController *vc = [viewControllers objectAtIndex:i];
             if (vc.sliderMenuItem) {

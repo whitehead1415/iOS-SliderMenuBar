@@ -11,6 +11,8 @@
 @interface SliderMenuItem : UIButton
 
 @property (nonatomic, retain) id delegate;
+@property UIImage *image;
+@property NSString *title;
 
 - (id)initWithImage:(UIImage *)image title:(NSString *)title color:(UIColor *)color;
 

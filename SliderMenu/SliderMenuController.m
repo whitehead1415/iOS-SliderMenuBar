@@ -57,19 +57,23 @@
     [self.view addSubview:newContent.view];
     [newContent didMoveToParentViewController:self];
     
-    //untested
     
     SliderMenuItem *activeItem = [_menuBar.sliderMenuItems objectAtIndex:_menuBar.active];
     if (activeItem.tag == sender.tag) {
         return;
     }
+    [[_menuBar.sliderMenuItems objectAtIndex:_menuBar.active] setSelected:NO];
+    [[_menuBar.sliderMenuItems objectAtIndex:sender.tag-1] setSelected:YES];
+
     _menuBar.active = sender.tag-1;
+    
     
     [UIView animateWithDuration:0.2f
                           delay:0.0f
                         options:UIViewAnimationOptionCurveEaseOut
                      animations:^(void) {[self sizeSliderItems];}
                      completion: nil];
+    
     
 }
 

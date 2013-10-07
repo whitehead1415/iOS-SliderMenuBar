@@ -71,19 +71,32 @@
     XCTAssertTrue([[controller.view subviews] containsObject:view1.view], @"First SliderView in the sliderViews array should be set as a subview");
 }
 
-- (void)testsliderMenuItemWasTouchedCangesViewControllerToCorospondingItem {
-    SliderMenuBar *subview = [[controller.view subviews] objectAtIndex:0];
-    [[subview.sliderMenuItems objectAtIndex:1] sendActionsForControlEvents:UIControlEventTouchUpInside];
-    XCTAssertTrue([[controller.view subviews] containsObject:view2.view], @"Second SliderView in the sliderViews array should be set as a subview");
-}
-
 - (void)testSliderMenuBarItemsResizesOnOrientationChange {
     SliderMenuBar *menuBar = [[controller.view subviews] objectAtIndex:0];
     menuBar.frame = CGRectMake(0, 0, 100, 80);
     [controller didRotateFromInterfaceOrientation:UIInterfaceOrientationLandscapeLeft];
     XCTAssertEqual([[menuBar.subviews objectAtIndex:0] frame], CGRectMake(0, 0, 75, 80), @"item should be half the size after changing orientation");
     XCTAssertEqual([[menuBar.subviews objectAtIndex:1] frame], CGRectMake(75, 0, 25, 80), @"item should be half the size after changing orientation");
+}
 
+#pragma mark - Touching The Items
+
+- (void)testSliderMenuItemWasTouchedCangesViewControllerToCorospondingItem {
+    SliderMenuBar *subview = [[controller.view subviews] objectAtIndex:0];
+    [[subview.sliderMenuItems objectAtIndex:1] sendActionsForControlEvents:UIControlEventTouchUpInside];
+    XCTAssertTrue([[controller.view subviews] containsObject:view2.view], @"Second SliderView in the sliderViews array should be set as a subview");
+}
+
+- (void)testSliderMenuItemWasTouchedSetsTheSenderAsSelected {
+    SliderMenuBar *menuBar = [[controller.view subviews] objectAtIndex:0];
+    [[menuBar.sliderMenuItems objectAtIndex:1] sendActionsForControlEvents:UIControlEventTouchUpInside];
+    XCTAssertTrue([[menuBar.sliderMenuItems objectAtIndex:1] isSelected], @"should be selected after touch");
+}
+
+- (void)testSliderMenuItemWasTouchedSetsTheOldActiveItemAsUnSelected {
+    SliderMenuBar *menuBar = [[controller.view subviews] objectAtIndex:0];
+    [[menuBar.sliderMenuItems objectAtIndex:1] sendActionsForControlEvents:UIControlEventTouchUpInside];
+    XCTAssertFalse([[menuBar.sliderMenuItems objectAtIndex:0] isSelected], @"should be unselected after other item was touched");
 }
 
 @end
